@@ -4,6 +4,56 @@ namespace IL_AnimationPair
 {
     public static class PairedAnimations
     {
+        public static readonly Dictionary<int, int[]> FFMPairs = new Dictionary<int, int[]>
+        {
+            // Male Female Female
+            {225, new[] {225, 226, 227}},
+            {226, new[] {225, 226, 227}},
+            {227, new[] {225, 226, 227}},
+#if AI
+#elif HS2
+            // Originally Female Female Male
+            // Changed to Male Female Female
+            {281, new[] {283, 281, 282}},
+            {282, new[] {283, 281, 282}},
+            {283, new[] {283, 281, 282}},
+            {284, new[] {286, 284, 285}},
+            {285, new[] {286, 284, 285}},
+            {286, new[] {286, 284, 285}},
+            {287, new[] {289, 287, 288}},
+            {288, new[] {289, 287, 288}},
+            {289, new[] {289, 287, 288}}
+#endif
+        };
+
+        public static readonly Dictionary<int, int[]> MMFPairs = new Dictionary<int, int[]>
+        {
+#if HS2
+            // Female, Male, Male
+            {260, new[] {260, 261, 262}},
+            {261, new[] {260, 261, 262}},
+            {262, new[] {260, 261, 262}},
+            {263, new[] {263, 264, 265}},
+            {264, new[] {263, 264, 265}},
+            {265, new[] {263, 264, 265}},
+            {266, new[] {266, 267, 268}},
+            {267, new[] {266, 267, 268}},
+            {268, new[] {266, 267, 268}},
+            {269, new[] {269, 270, 271}},
+            {270, new[] {269, 270, 271}},
+            {271, new[] {269, 270, 271}},
+            {272, new[] {272, 273, 274}},
+            {273, new[] {272, 273, 274}},
+            {274, new[] {272, 273, 274}},
+            {275, new[] {275, 276, 277}},
+            {276, new[] {275, 276, 277}},
+            {277, new[] {275, 276, 277}},
+            {278, new[] {278, 279, 280}},
+            {279, new[] {278, 279, 280}},
+            {280, new[] {278, 279, 280}},
+#endif
+        };
+
         public static readonly Dictionary<int, int[]> FFPairs = new Dictionary<int, int[]>
         {
             {215, new[] {216}},
@@ -121,6 +171,28 @@ namespace IL_AnimationPair
             {211, new[] {8, 7}},
             {212, new[] {8, 7}},
             {213, new[] {8, 7}},
+#if HS2
+                {236, new[] {23, 22}},
+                {237, new[] {23, 22}},
+                {238, new[] {23, 22}},
+                {239, new[] {23, 22}},
+                {240, new[] {25, 24}},
+                {241, new[] {25, 24}},
+                {242, new[] {25, 24}},
+                {243, new[] {25, 24}},
+                {244, new[] {25, 24}},
+                {245, new[] {25, 24}},
+                {246, new[] {25, 24}},
+                {247, new[] {25, 24}},
+                {248, new[] {25, 24}},
+                {249, new[] {25, 24}},
+                {250, new[] {25, 24}},
+                {290, new[] {25, 24}},
+                {251, new[] {27, 26}},
+                {252, new[] {27, 26}},
+                {254, new[] {27, 26}},
+                {255, new[] {27, 26}},
+#endif
             // Bitch ass illusion, have some consistency asshole
             // single length array is category swap.
             // key: female, value: male
@@ -134,12 +206,6 @@ namespace IL_AnimationPair
             {292, new[] {-291}},
             {293, new[] {294}},
             {294, new[] {-293}},
-            {225, new[] {225, 226, 227}},
-            {226, new[] {225, 226, 227}},
-            {227, new[] {225, 226, 227}}
-#if AI
-#elif HS2
-#endif
         };
     }
 }
