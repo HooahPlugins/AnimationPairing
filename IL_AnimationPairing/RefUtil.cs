@@ -1,10 +1,33 @@
 ﻿using System.Reflection;
 using JetBrains.Annotations;
+using UnityEngine;
 
 namespace IL_AnimationPair
 {
     public static class RefUtil
     {
+        // public static T CopyComponent<T>(this GameObject destination, T original) where T : Component
+        // {
+        //     var type = original.GetType();
+        //     var dst = destination.GetComponent(type) as T;
+        //     if (!dst) dst = destination.AddComponent(type) as T;
+        //     var fields = type.GetFields();
+        //     foreach (var field in fields)
+        //     {
+        //         if (field.IsStatic) continue;
+        //         field.SetValue(dst, field.GetValue(original));
+        //     }
+        //
+        //     var props = type.GetProperties();
+        //     foreach (var prop in props)
+        //     {
+        //         if (!prop.CanWrite || !prop.CanWrite || prop.Name == "name") continue;
+        //         prop.SetValue(dst, prop.GetValue(original, null), null);
+        //     }
+        //
+        //     return dst;
+        // }
+
         public static object GetInstanceField<T>(T instance, string fieldName)
         {
             var bindFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static;

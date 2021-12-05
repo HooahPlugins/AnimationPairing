@@ -1,8 +1,8 @@
 ﻿using BepInEx;
+using HarmonyLib;
 using IL_AnimationPair;
 using KKAPI;
 using KKAPI.Studio;
-using static BepInEx.Harmony.HarmonyWrapper;
 
 [BepInDependency(KoikatuAPI.GUID)]
 [BepInPlugin(GUID, "AI_AnimationPairing", VERSION)]
@@ -17,6 +17,6 @@ public class AnimationPairing : BaseUnityPlugin
     {
         Instance = this;
         if (!StudioAPI.InsideStudio) return;
-        PatchAll(typeof(GameHooks));
+        Harmony.CreateAndPatchAll(typeof(GameHooks));
     }
 }
