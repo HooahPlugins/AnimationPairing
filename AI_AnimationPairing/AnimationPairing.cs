@@ -9,7 +9,7 @@ using KKAPI.Studio;
 public class AnimationPairing : BaseUnityPlugin
 {
     public const string GUID = "com.hooh.ai.animpari";
-    public const string VERSION = "1.0.0";
+    public const string VERSION = "1.2.0";
 
     public AnimationPairing Instance { get; set; }
 
